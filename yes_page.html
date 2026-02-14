@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yay! We're Valentines! 💕</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="yes_style.css">
+</head>
+<body>
+    <div class="confetti-container" id="confetti"></div>
+    <div class="hearts-background" id="heartsBackground"></div>
+    
+    <div class="container">
+        <div class="celebration-card">
+            <h1 class="header-text">Yay! 🎉</h1>
+            <h2 class="subheader">I knew you'd say yes!</h2>
+            
+            <div class="gif-container">
+                <img src="img3.gif" alt="Bears Kissing" class="celebration-gif">
+            </div>
+            
+            <div class="love-message">
+                <p class="message-text">
+                    You've made me the happiest person in the world! 💖
+                </p>
+                <p class="message-text">
+                    Can't wait to celebrate Valentine's Day with you! 🌹
+                </p>
+            </div>
+            
+            <div class="heart-collection">
+                <span class="heart-icon">💕</span>
+                <span class="heart-icon">💖</span>
+                <span class="heart-icon">💗</span>
+                <span class="heart-icon">💝</span>
+                <span class="heart-icon">💞</span>
+            </div>
+            
+            <button class="back-button" onclick="window.location.href='surprise.html'">
+                One More Thing... ✨
+            </button>
+        </div>
+    </div>
+    
+    <script>
+        // Create confetti
+        function createConfetti() {
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            confetti.style.left = Math.random() * 100 + '%';
+            confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            confetti.style.animationDelay = Math.random() * 2 + 's';
+            
+            const colors = ['#ff1493', '#ff69b4', '#ffd700', '#ff6347', '#ff85c1'];
+            confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+            
+            document.getElementById('confetti').appendChild(confetti);
+            
+            setTimeout(() => confetti.remove(), 6000);
+        }
+
+        // Generate confetti
+        for (let i = 0; i < 50; i++) {
+            setTimeout(createConfetti, i * 100);
+        }
+        setInterval(createConfetti, 300);
+
+        // Create floating hearts
+        function createFloatingHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'floating-heart';
+            const hearts = ['❤️', '💕', '💖', '💗', '💝', '💞', '🌹', '✨'];
+            heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.fontSize = (Math.random() * 25 + 20) + 'px';
+            heart.style.animationDuration = (Math.random() * 3 + 5) + 's';
+            
+            document.getElementById('heartsBackground').appendChild(heart);
+            
+            setTimeout(() => heart.remove(), 10000);
+        }
+
+        setInterval(createFloatingHeart, 400);
+        for (let i = 0; i < 20; i++) {
+            setTimeout(createFloatingHeart, i * 150);
+        }
+    </script>
+</body>
+</html>

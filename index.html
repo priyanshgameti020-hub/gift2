@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine? 💕</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="hearts-background" id="heartsBackground"></div>
+    
+    <div class="container">
+        <div class="card">
+            <div class="gif-container">
+                <img src="img1.gif" alt="Cute Bear with Flowers" class="main-gif">
+            </div>
+            
+            <h1 class="question">Will you be my Valentine?</h1>
+            
+            <div class="buttons">
+                <button class="yes-button" id="yesButton" onclick="handleYesClick()">
+                    <span>Yes! 💕</span>
+                </button>
+                <button class="no-button" id="noButton" onclick="handleNoClick()">
+                    <span>No</span>
+                </button>
+            </div>
+            
+            <div class="sparkles" id="sparkles"></div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
